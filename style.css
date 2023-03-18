@@ -1,140 +1,141 @@
+html,
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  height: 100%;
   margin: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.flex-container {
+  display: flex;
+  height: 100%;
 }
 
-
-.library {
+.flex-one {
+  flex: 2;
+  box-shadow: 10px 10px 5px rgb(206, 201, 201);
+  align-items: center;
   display: flex;
 }
 
-.wrapper {
-  flex: 1;
+.book-container {
+  flex: 2;
+  color: black;
 }
 
-.shelves {
+.form-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 4px;
+  width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-self: center;
+}
+
+.form-title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+  -webkit-appearance: none;
+  border: 2px solid #333;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.form-checkbox:checked {
+  background-color: #333;
+}
+
+.form-checkbox:checked::before {
+  content: "✓";
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 14px;
+}
+
+.form-checkbox-label {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-btn {
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+}
+
+.book-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
   grid-gap: 20px;
 }
 
-
-form {
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin-bottom: 20px;
-  max-width: 600px;
-  width: 100%;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input[type="text"],
-input[type="number"],
-label[for="read"] {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #333;
-}
-
-input[type="text"],
-input[type="number"],
-button[type="submit"],
-label[for="read"] {
-  display: block;
-  width: 100%;
-  padding: 12px;
+.book-card {
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 16px;
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 200px;
+  max-width: 200px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.book-title {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-button[type="submit"]:hover {
-  background-color: #3e8e41;
-}
-
-.checkbox-wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-
-.book {
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.book h2 {
-  margin-top: 0;
-}
-
-.book p {
-  margin: 0;
-}
-
-.book .author {
+.book-author {
+  font-size: 1rem;
   font-style: italic;
 }
 
-.book .pages {
-  font-size: 0.8em;
-  margin-top: 8px;
+.book-pages {
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-.book .read {
-  font-size: 0.8em;
-  margin-top: 8px;
+.book-read {
+  font-size: 0.8rem;
+  margin-top: 10px;
   font-weight: bold;
-  color: #4CAF50;
 }
-
-
-.container {
-  display: flex;
-}
-
-.wrapper {
-  flex: 1;
-}
-
-.shelves-container {
-  flex: 2;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.shelves {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
-
