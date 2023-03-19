@@ -38,11 +38,6 @@ body {
   align-self: center;
 }
 
-.fade-out {
-  opacity: 0;
-  transition: all 1s;
-  
-}
 .form-title {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;

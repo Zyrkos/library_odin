@@ -131,23 +131,11 @@ form.addEventListener("submit", function (event) {
   bookForm.style.display = "none"; // This makes the book form dissapear after adding a book
 });
 
-/* toggleBtn.addEventListener("click", function () {
+ toggleBtn.addEventListener("click", function () {
   if (bookForm.style.display === "none") {
     bookForm.style.display = "block";
   } else {
     bookForm.style.display = "none";
   }
-}); */
+}); 
 
-toggleBtn.addEventListener("click", function () {
-  if (bookForm.style.display === "none") {
-    bookForm.style.display = "block";
-    bookForm.classList.remove("fade-out");
-  } else {
-    bookForm.style.display = "none";
-    bookForm.classList.add("fade-out");
-    setTimeout(function () {
-      bookForm.style.display = "none";
-    }, 1000); // set the delay to match the transition duration in your CSS
-  }
-});
