@@ -39,7 +39,24 @@ form.addEventListener("submit", function (event) {
   titleElement.textContent = title;
   newBookCard.appendChild(titleElement);
 
+  const authorElement = document.createElement("p");
+  authorElement.classList.add("book-author");
+  authorElement.textContent = author;
+  newBookCard.appendChild(authorElement);
+
+  const pagesElement = document.createElement("p");
+  pagesElement.classList.add("book-pages");
+  pagesElement.textContent = pages;
+  newBookCard.appendChild(pagesElement);
+
+  const isReadElement = document.createElement("button");
+  isReadElement.classList.add("read-status-btn");
+  isReadElement.textContent = readInput.checked ? "read" : "unread";
+  newBookCard.appendChild(isReadElement);
+
   bookContainer.appendChild(newBookCard);
+
+  
 
   // clear the input fields after submitting
   titleInput.value = "";
@@ -47,3 +64,4 @@ form.addEventListener("submit", function (event) {
   pagesInput.value = "";
   readInput.value = "";
 });
+
