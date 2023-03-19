@@ -1,4 +1,5 @@
-const myLibrary = [];
+let myLibrary = [];
+
 const form = document.getElementById("book-form");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
@@ -6,37 +7,38 @@ const pagesInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
 const bookContainer = document.getElementById("book-container");
 
-/* function Book(title, author, pages, isRead) {
-  constructor(
-    title = 'Unknown';
-    author = 'Unknown';
-    pages = '0';
-    isRead = false;
-  ) {
+function Book(title, author, pages, isRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
 }
-} */
+
+function addBookToLibrary() {
+  const title = form.title.value;
+  const author = form.author.value;
+  const pages = form.pages.value;
+  const isRead = form.isRead.checked;
+
+  const newBook = new Book(title, author, pages, isRead);
+  myLibrary.push(newBook);
+}
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const title = titleInput.value;
   const author = authorInput.value;
   const pages = pagesInput.value;
-  const read = readInput.value;
+  const isRead = readInput.value;
 
-  
   const newBookCard = document.createElement("div");
   newBookCard.classList.add("book-card");
-  newBookCard.innerHTML = `
-    <h2 class="book-title">${title}</h2>
-    <p class="book-author">${author}</p>
-    <p class="book-pages">${pages}</p>
-    <p class="book-read">${read}</p>
-  `;
-  
+
+  const titleElement = document.createElement("h2");
+  titleElement.classList.add("book-title");
+  titleElement.textContent = title;
+  newBookCard.appendChild(titleElement);
+
   bookContainer.appendChild(newBookCard);
 
   // clear the input fields after submitting
@@ -44,17 +46,4 @@ form.addEventListener("submit", function (event) {
   authorInput.value = "";
   pagesInput.value = "";
   readInput.value = "";
-
-
-})
-
-/* function addBookToLibrary(title, author, pages, isRead) {
-  let newBook = new Book(title, author, pages, isRead);
-  myLibrary.push(newBook);
-  
-
-  
-} */
-
-
-
+});
