@@ -104,36 +104,42 @@ body {
 
 .book-container {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
 }
 
 .book-card {
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
-  max-height: 200px;
-  max-width: 200px;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 20px; 
   display: flex;
   flex-direction: column;
+  
 }
 
 .book-title {
-  font-size: 1.2rem;
+  
   font-weight: bold;
+  font-size: 1.5rem; /* adjust to desired size */
+  margin: 0.5rem 0; /* adjust to desired spacing */
+  text-align: center; /* adjust to desired alignment */
+  max-width: 100%; /* add this line */
+  word-wrap: break-word;
+  display: block;
 }
 
 .book-author {
   font-size: 1rem;
   font-style: italic;
+  text-align: center;
 }
 
 .book-pages {
   font-size: 0.8rem;
   margin-top: 10px;
+  text-align: center;
 }
 
 .book-read {
@@ -151,7 +157,7 @@ body {
   align-content: center;
   flex-wrap: wrap;
   gap: 5px;
-  
+  margin-top: 50px;
 }
 
 .read {
@@ -161,7 +167,7 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 20px;
-  width: 50%;
+  width: 80%;
   
 }
 
@@ -172,7 +178,7 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 20px;
-  width: 50%;
+  width: 80%;
 }
 
 .delete-btn {
@@ -182,5 +188,5 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 20px;
-  width: 50%;
+  width: 80%;
 }
