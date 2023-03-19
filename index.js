@@ -90,7 +90,7 @@ form.addEventListener("submit", function (event) {
   const title = titleInput.value;
   const author = authorInput.value;
   const pages = pagesInput.value;
-  const isRead = readInput.value;
+  const isRead = readInput.checked; //changed to checked (boolean)
 
   const book = new Book(title, author, pages, isRead);
   library.addBook(book);
