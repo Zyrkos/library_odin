@@ -12,19 +12,20 @@ function Book(title, author, pages, isRead) {
   this.isRead = isRead;
 }
 
-function Library() {  //We encapsulate all the functionalities within the same function to better manage it
+function Library() {
+  //We encapsulate all the functionalities within the same function to better manage it
   const myLibrary = [];
 
   function addBook(book) {
     myLibrary.push(book);
   }
 
-   function removeBook(book) {
+  function removeBook(book) {
     const index = myLibrary.indexOf(book);
     if (index !== -1) {
       myLibrary.splice(index, 1);
     }
-  } 
+  }
 
   function toggleReadStatus(book) {
     book.isRead = !book.isRead;
@@ -43,14 +44,14 @@ function Library() {  //We encapsulate all the functionalities within the same f
     removeBook,
     toggleReadStatus,
     getBooks,
-    clearLibrary
+    clearLibrary,
   };
 }
 
 const library = new Library();
 
-
-function addBookToLibrary(book) {  // We create a separate function that adds new books to the library
+function addBookToLibrary(book) {
+  // We create a separate function that adds new books to the library
   const newBookCard = document.createElement("div");
   newBookCard.classList.add("book-card");
 
@@ -74,6 +75,18 @@ function addBookToLibrary(book) {  // We create a separate function that adds ne
   isReadElement.textContent = book.isRead ? "read" : "unread";
   newBookCard.appendChild(isReadElement);
 
+  isReadElement.addEventListener("click", function () {
+    book.isRead = !book.isRead;
+
+    isReadElement.textContent = book.isRead ? "read" : "unread";
+
+    if (book.isRead) {
+      isReadElement.classList.add("read");
+    } else {
+      isReadElement.classList.remove("read");
+    }
+  });
+
   const deleteBtnElement = document.createElement("button");
   deleteBtnElement.textContent = "Delete";
   deleteBtnElement.addEventListener("click", () => {
@@ -85,7 +98,7 @@ function addBookToLibrary(book) {  // We create a separate function that adds ne
   return newBookCard;
 }
 
-form.addEventListener("submit", function (event) { 
+form.addEventListener("submit", function (event) {
   event.preventDefault();
   const title = titleInput.value;
   const author = authorInput.value;
@@ -97,10 +110,11 @@ form.addEventListener("submit", function (event) {
   const newBookCard = addBookToLibrary(book);
   bookContainer.appendChild(newBookCard);
 
-  
   // clear the input fields after submitting
   titleInput.value = "";
   authorInput.value = "";
   pagesInput.value = "";
-  readInput.value = "";
+  readInput.checked = false;
 });
+
+
