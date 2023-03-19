@@ -4,6 +4,8 @@ const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
 const bookContainer = document.getElementById("book-container");
+const toggleBtn = document.getElementById("toggle-btn");
+const bookForm = document.getElementById("book-form");
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -82,8 +84,8 @@ function addBookToLibrary(book) {
     isReadElement.textContent = "Read";
   } else {
     isReadElement.classList.add("unread");
-    isReadElement.textContent = ("Unread");
-  };
+    isReadElement.textContent = "Unread";
+  }
   newDiv.appendChild(isReadElement);
 
   isReadElement.addEventListener("click", function () {
@@ -124,9 +126,28 @@ form.addEventListener("submit", function (event) {
   const newBookCard = addBookToLibrary(book);
   bookContainer.appendChild(newBookCard);
 
-  // clear the input fields after submitting
-  titleInput.value = "";
-  authorInput.value = "";
-  pagesInput.value = "";
-  readInput.checked = false;
+  bookForm.reset();
+
+  bookForm.style.display = "none"; // This makes the book form dissapear after adding a book
+});
+
+/* toggleBtn.addEventListener("click", function () {
+  if (bookForm.style.display === "none") {
+    bookForm.style.display = "block";
+  } else {
+    bookForm.style.display = "none";
+  }
+}); */
+
+toggleBtn.addEventListener("click", function () {
+  if (bookForm.style.display === "none") {
+    bookForm.style.display = "block";
+    bookForm.classList.remove("fade-out");
+  } else {
+    bookForm.style.display = "none";
+    bookForm.classList.add("fade-out");
+    setTimeout(function () {
+      bookForm.style.display = "none";
+    }, 1000); // set the delay to match the transition duration in your CSS
+  }
 });

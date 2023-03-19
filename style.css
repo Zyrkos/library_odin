@@ -4,9 +4,16 @@ body {
   margin: 0;
 }
 
+.nav {
+  background-color: black;
+
+  height: 100px;
+}
+
 .flex-container {
   display: flex;
   height: 100%;
+  flex-direction: column;
 }
 
 .flex-one {
@@ -31,6 +38,11 @@ body {
   align-self: center;
 }
 
+.fade-out {
+  opacity: 0;
+  transition: all 1s;
+  
+}
 .form-title {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
@@ -104,7 +116,7 @@ body {
 
 .book-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
 }
@@ -113,19 +125,17 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-left: 20px;
-  margin-top: 20px; 
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  
 }
 
 .book-title {
-  
   font-weight: bold;
-  font-size: 1.5rem; /* adjust to desired size */
-  margin: 0.5rem 0; /* adjust to desired spacing */
-  text-align: center; /* adjust to desired alignment */
-  max-width: 100%; /* add this line */
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  max-width: 100%;
   word-wrap: break-word;
   display: block;
 }
@@ -146,10 +156,7 @@ body {
   font-size: 0.8rem;
   margin-top: 10px;
   font-weight: bold;
-  
 }
-
-
 
 #card-btns-div {
   display: flex;
@@ -168,7 +175,6 @@ body {
   cursor: pointer;
   border-radius: 20px;
   width: 80%;
-  
 }
 
 .unread {

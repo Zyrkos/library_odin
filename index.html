@@ -9,9 +9,10 @@
   </head>
   <body>
     <div class="flex-container">
+
       <div class="flex-one">
-        <div class="form-container">
-          <form id="book-form">
+        <button id="toggle-btn">Add a New Book</button>
+        <form id="book-form" class="form-container" style="display:none;">
             <h2 class="form-title">Add a Book</h2>
             <label for="title" class="form-label">Title</label>
             <input
@@ -43,7 +44,7 @@
             </div>
             <button type="submit" class="form-btn">Add Book</button>
           </form>
-        </div>
+        
       </div>
       <div class="book-container" id="book-container">
         
