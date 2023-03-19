@@ -70,30 +70,44 @@ function addBookToLibrary(book) {
   pagesElement.textContent = book.pages;
   newBookCard.appendChild(pagesElement);
 
+  const divName = "card-btns-div";
+  const newDiv = document.createElement("div");
+  newDiv.setAttribute("id", divName);
+
+  newBookCard.appendChild(newDiv);
+
   const isReadElement = document.createElement("button");
-  isReadElement.classList.add("read-status-btn");
-  isReadElement.textContent = book.isRead ? "read" : "unread";
-  newBookCard.appendChild(isReadElement);
+  if (book.isRead) {
+    isReadElement.classList.add("read");
+    isReadElement.textContent = "Read";
+  } else {
+    isReadElement.classList.add("unread");
+    isReadElement.textContent = ("Unread");
+  };
+  newDiv.appendChild(isReadElement);
 
   isReadElement.addEventListener("click", function () {
     book.isRead = !book.isRead;
 
-    isReadElement.textContent = book.isRead ? "read" : "unread";
+    isReadElement.textContent = book.isRead ? "Read" : "Unread";
 
     if (book.isRead) {
       isReadElement.classList.add("read");
+      isReadElement.classList.remove("unread");
     } else {
+      isReadElement.classList.add("unread");
       isReadElement.classList.remove("read");
     }
   });
 
   const deleteBtnElement = document.createElement("button");
   deleteBtnElement.textContent = "Delete";
+  deleteBtnElement.classList.add("delete-btn");
   deleteBtnElement.addEventListener("click", () => {
     library.removeBook(book);
     bookContainer.removeChild(newBookCard);
   });
-  newBookCard.appendChild(deleteBtnElement);
+  newDiv.appendChild(deleteBtnElement);
 
   return newBookCard;
 }
@@ -116,5 +130,3 @@ form.addEventListener("submit", function (event) {
   pagesInput.value = "";
   readInput.checked = false;
 });
-
-

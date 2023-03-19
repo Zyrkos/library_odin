@@ -117,6 +117,8 @@ body {
   max-width: 200px;
   margin-left: 20px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-title {
@@ -138,8 +140,47 @@ body {
   font-size: 0.8rem;
   margin-top: 10px;
   font-weight: bold;
+  
 }
 
-.read-status-btn {
+
+
+#card-btns-div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
   
+}
+
+.read {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
+  
+}
+
+.unread {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
 }
